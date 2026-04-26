@@ -1,7 +1,7 @@
 # sysupdate
 
 <p align="right">
-  <a href="./README.ko.md"><img src="https://img.shields.io/badge/한국어-2f80ed?style=for-the-badge&label=Language&labelColor=1f2937" alt="한국어"></a><a href="./README.en.md"><img src="https://img.shields.io/badge/English-555555?style=for-the-badge&label=%20&labelColor=1f2937" alt="English"></a>
+  <a href="./README.ko.md"><img src="https://img.shields.io/badge/한국어-2f80ed?style=for-the-badge&label=Language&labelColor=1f2937" alt="한국어"></a><a href="./README.md"><img src="https://img.shields.io/badge/English-555555?style=for-the-badge&label=%20&labelColor=1f2937" alt="English"></a>
 </p>
 
 Ubuntu/Debian 계열 Linux에서 시스템 업데이트를 한 번에 실행할 수 있는 명령어 설치 도구입니다.
@@ -66,7 +66,7 @@ sysupdate
 
 ## 한 줄 설치
 
-이미 저장소를 클론한 상태라면 아래 명령어만 실행하면 됩니다.
+이미 `sysupdate` 디렉터리 안에 있다면 아래 명령어만 실행하면 됩니다.
 
 ```bash
 chmod +x ./install.sh && ./install.sh
@@ -112,9 +112,7 @@ command -v sysupdate
 /home/username/.local/bin/sysupdate
 ```
 
-## 사용 방법
-
-설치 후 터미널 어디에서든 아래 명령어를 실행하면 됩니다.
+## 사용법
 
 ```bash
 sysupdate
@@ -136,9 +134,15 @@ export PATH="$HOME/.local/bin:$PATH"
 
 ## 주의사항
 
-이 도구는 `apt full-upgrade`를 사용합니다.
+이 도구는 다음 명령어를 사용합니다.
 
-`full-upgrade`는 패키지 의존성 해결 과정에서 필요한 경우 기존 패키지를 제거할 수 있습니다. 일반적인 개인 PC에서는 대체로 문제 없지만, 운영 서버나 중요한 개발 환경에서는 실행 전 변경 내용을 확인하는 것이 안전합니다.
+```bash
+sudo apt full-upgrade -y
+```
+
+`full-upgrade`는 패키지 의존성 해결 과정에서 필요한 경우 기존 패키지를 제거할 수 있습니다.
+
+일반적인 개인 PC에서는 대체로 문제 없지만, 운영 서버나 중요한 개발 환경에서는 실행 전 변경 내용을 확인하는 것이 안전합니다.
 
 더 보수적으로 사용하려면 설치 후 아래 파일을 엽니다.
 
